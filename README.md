@@ -36,50 +36,55 @@ In this lab, I install the ticketing system osTicket from the ground up using ne
 
 1.) The first thing you are going to want to do is create a virtual machine by going to https://portal.azure.com/. Setup your virtual machine with Windows 10 Pro, version 22H2. Note, you will want to create a virtual machine with atleast 2 vcpus and 16 gbs of memory.
 
-2.) Once you have created your virtual machine you will want to conncet to it by using the public ip address the vm is setup with. You will connect using the remote desktop connection app. 
+2.) With the public IP address we will now connect to the VM using Remote Desktop Connection on our Windows computer. We will use the search bar at the bottom of the screen and type in Remote Desktop Connection and select it to open. Now paste the VM’s public IP address and click connect to initialize our remote connection. Note: The VM may take a moment to start up
+ 
 </p>
 <br />
 
 <p>
-<img src="https://imgur.com/MAhXK2e.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/SBd2kxK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 <p>
-<img src="https://imgur.com/Zf2jw07.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/0no6NJM.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
   
-3.) Once you have connected to your virtual machine you will want to go to your control panel. From the control panel open up programs. Select, Turn Windows features on and off.
+3.) Once completed, we will click on the “More choices” option and “Use a different account.” Now log in using the credentials we made when setting up the VM and click “Ok”
+
 
 <p>
-<img src="https://imgur.com/fGXMpx4.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/d0GqyIh.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
   
 <p>
-<img src="https://imgur.com/LBGkAw6.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/3DaExaS.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
   
-4.) You will want to install / enable IIS in Windows with CGI and Common HTTP Features
-  - World Wide Web Services -> Application Development Features -> 
+4.) To start we will need to enable Internet Information Services (IIS). To do this open the Control Panel -> Programs -> Turn Windows Features On or Off. 
+We will then check Internet Information Services and expand it, expand World Wide Web Services, and Application Development Features. Check the CGI box. Now under Common HTTP Features check HTTP Redirection and WebDAV Publishing and click ok. Then IIS will be installed.
+
+
 [X] CGI
 [X] Common HTTP Features
   
 <p>
-<img src="https://imgur.com/LQjw9le.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/kwYoh4V.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-  
+
 <p>
-<img src="https://imgur.com/pbPeHb1.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/wyBnhq6.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-  
+
+
 ***NOTE*** Make sure all Common HTTP Features are checked.
  
- To make sure the IIS is installed / enabled go to a browser of your choice and search for 127.0.0.1 
-  It should look something like this. 
+ 
+Next is to test the connectivity to the web server which can be done by opening a web browser and type 127.0.0.1 and it should look like this
   
 <p>
 <img src="https://imgur.com/eICujoq.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -89,14 +94,26 @@ In this lab, I install the ticketing system osTicket from the ground up using ne
   
   
   
-5.) Now that the IIS is enabled, From the Installation Files, download and install PHP Manager for IIS (PHPManagerForIIS_V1.5.0.msi)
-  Go through the install wizard and complete the install.
+5.) Now it’s time to make use of the installations, we will start with downloading and installing PHP Manager. Click Open File on the top right corner and install with default settings, agreeing to the License Agreement.
+<p>
+<img src="https://i.imgur.com/Qi3JgOy.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+
   
-6.) Next from the Installation Files, download and install the Rewrite Module (rewrite_amd64_en-US.msi)
+6.) Now we are going to install rewrite_amd64_en-US.msi and open the file using the same method. We will agree to the license agreement and click finish
+<p>
+<img src="https://i.imgur.com/x5ptpWe.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
   
-7.) Create a folder in the C drive called PHP.
-  
-8.) From the Installation Files, download PHP 7.3.8 (php-7.3.88-nts-Win32-VC15-x866.zip) and unzip the contents into C:\PHP
+7.) After a successful installation of Rewrite Module we will open up file explorer, go to This Pc > Windows (C:) and create a folder named PHP which we will use to extract the contents of the PHP zip file which can be found in This PC > Downloads
+<p>
+<img src="https://i.imgur.com/WbGdbVO.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+
+8.) After created we will download and install the Redist executable (.exe)
   
   !! ATTENTION !!
 If this appears, choose to “Keep” the file:
@@ -112,24 +129,33 @@ If this appears, choose to “Keep” the file:
 <p>
 
 9.) Once you have downloaded and extracted the zip file into the PHP folder on the C drive, download and install the VC_redist.x86.exe from the installation files. Go through the setup wizard to finish setting up and installing the VC_redist.x86.exe. 
-  
-10.) Download and install MySQL 5.5.62 (mysql-5.5.62-win32.msi)
-  Run the setup wizard:
-Typical Setup ->
-Launch Configuration Wizard (after install) ->
-Standard Configuration ->
+<p>
+<img src="https://i.imgur.com/4RO41Qx.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
 
-  Make the new root password: Password1
+
+10.) Next step is to download and install php-7.3.8, right click it and extract all into the PHP folder we just created in the C drive.
+
+Now download and install mysql-5.5.62, open the file, accept the agreement, do a typical install. Ensure “Launch the MySQL Instance Configuration Wizard” is checked and click finish. 
+<p>
+<img src="https://i.imgur.com/PdNVV4Q.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+
+Make sure to click standard configuration, install as windows service, and create a username and password for the root account. Next > Execute > Finish. This will install osTicket’s database to store data and tickets.
   
 <p>
-<img src="https://imgur.com/KxcUy7C.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/1lQnARR.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
   
-  Execute the process on the next page.
-  
+With that done we will go to the start menu and search for IIS, right click it and run as an administrator
+
+Navigate to the PHP Manager button and double click to Register new PHP version. Path the install to the PHP folder we made within the C: drive, and click the PHP executable (.exe) and click ok
+
 <p>
-<img src="https://imgur.com/i7sn6hT.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/pjdn5c3.png height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
   
