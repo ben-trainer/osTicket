@@ -84,7 +84,7 @@ We will then check Internet Information Services and expand it, expand World Wid
 ***NOTE*** Make sure all Common HTTP Features are checked.
  
  
-Next is to test the connectivity to the web server which can be done by opening a web browser and type 127.0.0.1 and it should look like this
+5.) Next is to test the connectivity to the web server which can be done by opening a web browser and type 127.0.0.1 and it should look like this
   
 <p>
 <img src="https://imgur.com/eICujoq.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -94,26 +94,26 @@ Next is to test the connectivity to the web server which can be done by opening 
   
   
   
-5.) Now it’s time to make use of the installations, we will start with downloading and installing PHP Manager. Click Open File on the top right corner and install with default settings, agreeing to the License Agreement.
+6.) Now it’s time to make use of the installations, we will start with downloading and installing PHP Manager. Click Open File on the top right corner and install with default settings, agreeing to the License Agreement.
 <p>
 <img src="https://i.imgur.com/Qi3JgOy.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 
   
-6.) Now we are going to install rewrite_amd64_en-US.msi and open the file using the same method. We will agree to the license agreement and click finish
+7.) Now we are going to install rewrite_amd64_en-US.msi and open the file using the same method. We will agree to the license agreement and click finish
 <p>
 <img src="https://i.imgur.com/x5ptpWe.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
   
-7.) After a successful installation of Rewrite Module we will open up file explorer, go to This Pc > Windows (C:) and create a folder named PHP which we will use to extract the contents of the PHP zip file which can be found in This PC > Downloads
+8.) After a successful installation of Rewrite Module we will open up file explorer, go to This Pc > Windows (C:) and create a folder named PHP which we will use to extract the contents of the PHP zip file which can be found in This PC > Downloads
 <p>
 <img src="https://i.imgur.com/WbGdbVO.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 
-8.) After created we will download and install the Redist executable (.exe)
+9.) After created we will download and install the Redist executable (.exe)
   
   !! ATTENTION !!
 If this appears, choose to “Keep” the file:
@@ -128,14 +128,14 @@ If this appears, choose to “Keep” the file:
 </p>
 <p>
 
-9.) Once you have downloaded and extracted the zip file into the PHP folder on the C drive, download and install the VC_redist.x86.exe from the installation files. Go through the setup wizard to finish setting up and installing the VC_redist.x86.exe. 
+10.) Once you have downloaded and extracted the zip file into the PHP folder on the C drive, download and install the VC_redist.x86.exe from the installation files. Go through the setup wizard to finish setting up and installing the VC_redist.x86.exe. 
 <p>
 <img src="https://i.imgur.com/4RO41Qx.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 
 
-10.) Next step is to download and install php-7.3.8, right click it and extract all into the PHP folder we just created in the C drive.
+11.) Next step is to download and install php-7.3.8, right click it and extract all into the PHP folder we just created in the C drive.
 
 Now download and install mysql-5.5.62, open the file, accept the agreement, do a typical install. Ensure “Launch the MySQL Instance Configuration Wizard” is checked and click finish. 
 <p>
@@ -150,7 +150,7 @@ Make sure to click standard configuration, install as windows service, and creat
 </p>
 <p>
   
-With that done we will go to the start menu and search for IIS, right click it and run as an administrator
+11.) With that done we will go to the start menu and search for IIS, right click it and run as an administrator
 
 Navigate to the PHP Manager button and double click to Register new PHP version. Path the install to the PHP folder we made within the C: drive, and click the PHP executable (.exe) and click ok
 
@@ -167,7 +167,7 @@ Give the server a quick restart and continue
 </p>
 <p>
   
-11.) Next download will be the osTicket zip file, open the file and drag the upload file into the C: > inetpub > wwwroot. Then rename upload to osTicket. Open IIS and give the server a restart.
+12.) Next download will be the osTicket zip file, open the file and drag the upload file into the C: > inetpub > wwwroot. Then rename upload to osTicket. Open IIS and give the server a restart.
 
   
 <p>
@@ -183,16 +183,16 @@ Give the server a quick restart and continue
 </p>
 <p>
   
-Now we should go under the osTicket folder in the connections tab of IIS and click PHP manager > Enable or Disable extension. Enable the following extensions: php_imap.dll, php_intl.dll, php_opcache.dll
+13.) Now we should go under the osTicket folder in the connections tab of IIS and click PHP manager > Enable or Disable extension. Enable the following extensions: php_imap.dll, php_intl.dll, php_opcache.dll
 
 <p>
 <img src="https://i.imgur.com/HARG5Pb.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
   
-Navigate to This PC > C: > inetpub > wwwroot > osTIcket > include. Rename “ost-sampleconfig.php” to ost-config.php
+14.) Navigate to This PC > C: > inetpub > wwwroot > osTIcket > include. Rename “ost-sampleconfig.php” to ost-config.php
 
-Next is to change the permissions of ost-config.php. Right click it, Properties > Security > Advanced > Disable inheritance > Remove all inherited permissions from this object > Apply.
+15.) Next is to change the permissions of ost-config.php. Right click it, Properties > Security > Advanced > Disable inheritance > Remove all inherited permissions from this object > Apply.
 
   
 <p>
@@ -200,24 +200,24 @@ Next is to change the permissions of ost-config.php. Right click it, Properties 
 </p>
 <p>
   
-Next add permissions > Select a principle > (type everyone into object name box) Check Names > Ok > Full control > Ok > Apply > Ok
+16.) Next add permissions > Select a principle > (type everyone into object name box) Check Names > Ok > Full control > Ok > Apply > Ok
 
-Now go to our browser > Continue. Now download and install HeidiSQL and run the executable and select the default configurations and finish.
+17.) Now go to our browser > Continue. Now download and install HeidiSQL and run the executable and select the default configurations and finish.
 
-Inside HeidiSQL click new, and enter the credentials and right click unnamed to create a new database
+18.) Inside HeidiSQL click new, and enter the credentials and right click unnamed to create a new database
 
 <p>
 <img src="https://i.imgur.com/OjnEH7k.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
   
-13.) All that’s left is to clean up. Go to C: > inetpub > wwwroot > include ost-config.php > Properties > Security > Advanced > Everyone > Edit. Only have Read & execute and read enabled. Apply. 
+19.) All that’s left is to clean up. Go to C: > inetpub > wwwroot > include ost-config.php > Properties > Security > Advanced > Everyone > Edit. Only have Read & execute and read enabled. Apply. 
 <p>
 <img src="https://i.imgur.com/dITLQKY.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
  
-14.) With that done we have completed the prequisites and installation for osTicket!
+20.) With that done we have completed the prequisites and installation for osTicket!
   
 <p>
 <img src="https://i.imgur.com/pN5jDKa.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
