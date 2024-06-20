@@ -236,7 +236,7 @@ We have completed the prequisites and installation for osTicket!
 <p>
 
 <h2>Lessons Learned</h2>
-From this lab I was able to learn the use the depth you must go to create a ticketing system from the ground up. There are many steps and installations needed to form the database, however it creates a beautiful full fledged local ticketing system that will be used in future labs: 
+From this lab I was able to learn the use the depth you must go to create a ticketing system from the ground up. There are many steps and installations needed to form the database, however it creates a beautiful full fledged local ticketing system that will be used in future labs.
 
  - [osTicket: Post-Installation Configuration](https://github.com/ben-trainer/osTicket-post-install-cfg)
  - [osTicket: Resolving Tickets in a Ticketing System](https://github.com/ben-trainer/osTicket-lifecycle/tree/main)
