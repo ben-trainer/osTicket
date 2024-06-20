@@ -34,9 +34,9 @@ In this lab, I install the ticketing system osTicket from the ground up using ne
 <h2>Installation Steps</h2>
 
 
-1.) The first thing you are going to want to do is create a virtual machine by going to https://portal.azure.com/. Setup your virtual machine with Windows 10 Pro, version 22H2. Note, you will want to create a virtual machine with atleast 2 vcpus and 16 gbs of memory.
+1) Create a virtual machine by going to https://portal.azure.com/. Setup your virtual machine with Windows 10 Pro, version 22H2. Note, you will want to create a virtual machine with atleast 2 vcpus and 16 gbs of memory.
 
-2.) With the public IP address we will now connect to the VM using Remote Desktop Connection on our Windows computer. We will use the search bar at the bottom of the screen and type in Remote Desktop Connection and select it to open. Now paste the VM’s public IP address and click connect to initialize our remote connection. Note: The VM may take a moment to start up
+2) With the public IP address we will now connect to the VM using Remote Desktop Connection on our Windows computer. We will use the search bar at the bottom of the screen and type in Remote Desktop Connection and select it to open. Now paste the VM’s public IP address and click connect to initialize our remote connection. Note: The VM may take a moment to start up
  
 </p>
 <br />
@@ -51,7 +51,7 @@ In this lab, I install the ticketing system osTicket from the ground up using ne
 <p>
 
   
-3.) Once completed, we will click on the “More choices” option and “Use a different account.” Now log in using the credentials we made when setting up the VM and click “Ok”
+3) Click on the “More choices” option and “Use a different account.” Now log in using the credentials we made when setting up the VM and click “Ok”
 
 
 <p>
@@ -65,7 +65,7 @@ In this lab, I install the ticketing system osTicket from the ground up using ne
 <p>
 
   
-4.) To start we will need to enable Internet Information Services (IIS). To do this open the Control Panel -> Programs -> Turn Windows Features On or Off. 
+4) Enable Internet Information Services (IIS). To do this open the Control Panel -> Programs -> Turn Windows Features On or Off. 
 
  - We will then check Internet Information Services and expand it, expand World Wide Web Services, and Application Development Features. Check the CGI box. Now under Common HTTP Features check HTTP Redirection and WebDAV Publishing and click ok. Then IIS will be installed.
 
@@ -87,7 +87,7 @@ In this lab, I install the ticketing system osTicket from the ground up using ne
 ***NOTE*** Make sure all Common HTTP Features are checked.
  
  
-5.) Next is to test the connectivity to the web server which can be done by opening a web browser and type 127.0.0.1 and it should look like this
+5) Test the connectivity to the web server which can be done by opening a web browser and type 127.0.0.1 and it should look like this
   
 <p>
 <img src="https://imgur.com/eICujoq.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -97,28 +97,28 @@ In this lab, I install the ticketing system osTicket from the ground up using ne
   
   
   
-6.) Now it’s time to make use of the installations, we will start with downloading and installing PHP Manager. Click Open File on the top right corner and install with default settings, agreeing to the License Agreement.
+6) Now it’s time to make use of the installations, we will start with downloading and installing PHP Manager. Click Open File on the top right corner and install with default settings, agreeing to the License Agreement.
 <p>
 <img src="https://i.imgur.com/Qi3JgOy.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 
   
-7.) Install rewrite_amd64_en-US.msi and open the file using the same method. We will agree to the license agreement and click finish
+7) Install rewrite_amd64_en-US.msi and open the file using the same method. We will agree to the license agreement and click finish
 <p>
 <img src="https://i.imgur.com/x5ptpWe.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 
   
-8.) After a successful installation of Rewrite Module we will open up file explorer, go to This Pc > Windows (C:) and create a folder named PHP which we will use to extract the contents of the PHP zip file which can be found in This PC > Downloads
+8) After a successful installation of Rewrite Module we will open up file explorer, go to This Pc > Windows (C:) and create a folder named PHP which we will use to extract the contents of the PHP zip file which can be found in This PC > Downloads
 <p>
 <img src="https://i.imgur.com/WbGdbVO.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 
 
-9.) After created we will download and install the Redist executable (.exe)
+9) After created we will download and install the Redist executable (.exe)
   
   !! ATTENTION !!
 If this appears, choose to “Keep” the file:
@@ -129,19 +129,19 @@ If this appears, choose to “Keep” the file:
 <p>
   
 <p>
-<img src="https://imgur.com/YwBhqo0.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/YwBhqo0.png" height="20%" width="20%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 
 
-10.) Once you have downloaded and extracted the zip file into the PHP folder on the C drive, download and install the VC_redist.x86.exe from the installation files. Go through the setup wizard to finish setting up and installing the VC_redist.x86.exe. 
+10) Once you have downloaded and extracted the zip file into the PHP folder on the C drive, download and install the VC_redist.x86.exe from the installation files. Go through the setup wizard to finish setting up and installing the VC_redist.x86.exe. 
 <p>
 <img src="https://i.imgur.com/4RO41Qx.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 
 
-11.) Download and install php-7.3.8, right click it and extract all into the PHP folder we just created in the C drive.
+11) Download and install php-7.3.8, right click it and extract all into the PHP folder we just created in the C drive.
 
  - Download and install mysql-5.5.62, open the file, accept the agreement, do a typical install. Ensure “Launch the MySQL Instance Configuration Wizard” is checked and click finish.
  - Make sure to click standard configuration, install as windows service, and create a username and password for the root account. Next > Execute > Finish. This will install osTicket’s database to store data and tickets.
@@ -159,7 +159,7 @@ If this appears, choose to “Keep” the file:
 <p>
 
   
-11.) Go to the start menu and search for IIS, right click it and run as an administrator
+12) Go to the start menu and search for IIS, right click it and run as an administrator
  - Navigate to the PHP Manager button and double click to Register new PHP version. Path the install to the PHP folder we made within the C: drive, and click the PHP executable (.exe) and click ok
  - Give the server a quick restart and continue 
 
@@ -169,12 +169,12 @@ If this appears, choose to “Keep” the file:
 <p>
 
 <p>
-<img src="https://i.imgur.com/cMGFovJ.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/cMGFovJ.png" height="20%" width="20%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 
   
-12.) Download will be the osTicket zip file, open the file and drag the upload file into the C: > inetpub > wwwroot. Then rename upload to osTicket. Open IIS and give the server a restart.
+13) Download will be the osTicket zip file, open the file and drag the upload file into the C: > inetpub > wwwroot. Then rename upload to osTicket. Open IIS and give the server a restart.
 
   
 <p>
@@ -183,7 +183,7 @@ If this appears, choose to “Keep” the file:
 <p>
 
   
-12.) Within IIS in the connections section open Sites > Default Web Site > osTicket and under Actions tab click Browse *:00 (http). This should take us to our osTicket homepage
+14) Within IIS in the connections section open Sites > Default Web Site > osTicket and under Actions tab click Browse *:00 (http). This should take us to our osTicket homepage
 
   
 <p>
@@ -192,7 +192,7 @@ If this appears, choose to “Keep” the file:
 <p>
 
   
-13.) Go under the osTicket folder in the connections tab of IIS and click PHP manager > Enable or Disable extension. Enable the following extensions: php_imap.dll, php_intl.dll, php_opcache.dll
+15) Go under the osTicket folder in the connections tab of IIS and click PHP manager > Enable or Disable extension. Enable the following extensions: php_imap.dll, php_intl.dll, php_opcache.dll
 
 <p>
 <img src="https://i.imgur.com/HARG5Pb.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -200,9 +200,8 @@ If this appears, choose to “Keep” the file:
 <p>
 
   
-14.) Navigate to This PC > C: > inetpub > wwwroot > osTIcket > include. Rename “ost-sampleconfig.php” to ost-config.php
-
-15.) Next is to change the permissions of ost-config.php. Right click it, Properties > Security > Advanced > Disable inheritance > Remove all inherited permissions from this object > Apply.
+16) Navigate to This PC > C: > inetpub > wwwroot > osTIcket > include. Rename “ost-sampleconfig.php” to ost-config.php
+ -Change the permissions of ost-config.php. Right click it, Properties > Security > Advanced > Disable inheritance > Remove all inherited permissions from this object > Apply.
 
   
 <p>
@@ -211,11 +210,11 @@ If this appears, choose to “Keep” the file:
 <p>
 
   
-16.) Add permissions > Select a principle > (type everyone into object name box) Check Names > Ok > Full control > Ok > Apply > Ok
+17) Add permissions > Select a principle > (type everyone into object name box) Check Names > Ok > Full control > Ok > Apply > Ok
 
-17.) Go to our browser > Continue. Now download and install HeidiSQL and run the executable and select the default configurations and finish.
+18) Go to our browser > Continue. Now download and install HeidiSQL and run the executable and select the default configurations and finish.
 
-18.) Inside HeidiSQL click new, and enter the credentials and right click unnamed to create a new database
+19) Inside HeidiSQL click new, and enter the credentials and right click unnamed to create a new database
 
 <p>
 <img src="https://i.imgur.com/OjnEH7k.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -223,13 +222,13 @@ If this appears, choose to “Keep” the file:
 <p>
 
   
-19.) All that’s left is to clean up. Go to C: > inetpub > wwwroot > include ost-config.php > Properties > Security > Advanced > Everyone > Edit. Only have Read & execute and read enabled. Apply. 
+20) All that’s left is to clean up. Go to C: > inetpub > wwwroot > include ost-config.php > Properties > Security > Advanced > Everyone > Edit. Only have Read & execute and read enabled. Apply. 
 <p>
 <img src="https://i.imgur.com/dITLQKY.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
  
-20.) With that done we have completed the prequisites and installation for osTicket!
+21) We have completed the prequisites and installation for osTicket!
   
 <p>
 <img src="https://i.imgur.com/pN5jDKa.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
